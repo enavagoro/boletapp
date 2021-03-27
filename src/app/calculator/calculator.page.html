@@ -1,0 +1,50 @@
+<!--
+<ion-header>
+  <ion-toolbar>
+    <ion-title>calculator</ion-title>
+  </ion-toolbar>
+</ion-header>
+-->
+
+<ion-content>
+  <div class="container-sides">
+    <div class="rigth-side">
+      <!-- calculadora -->
+      <div class="result">
+        <div class="display"><p>{{ logList + current}}</p></div>
+        <div class="answer" *ngIf="!Error">{{ answer | number}}</div>
+        <div class="answer" *ngIf="Error">{{ answer}}</div>
+      </div>
+      <div class="calculator">
+        <div (click)="clear()" id="clear" class="btn operator blue-background">C</div>
+        <div (click)="sign()" id="sign" class="btn operator">+/-</div>
+        <div (click)="divide()" id="divide" class="btn operator">
+          /
+        </div>
+        <div (click)="percent()" id="percent" class="btn operator">
+          %
+        </div>
+        <div (click)="append('7')" id="n7" class="btn">7</div>
+        <div (click)="append('8')" id="n8" class="btn">8</div>
+        <div (click)="append('9')" id="n9" class="btn">9</div>
+        <div (click)="times()" id="times" class="btn operator">*</div>
+        <div (click)="append('4')" id="n4" class="btn">4</div>
+        <div (click)="append('5')" id="n5" class="btn">5</div>
+        <div (click)="append('6')" id="n6" class="btn">6</div>
+        <div (click)="minus()" id="minus" class="btn operator">-</div>
+        <div (click)="append('1')" id="n1" class="btn">1</div>
+        <div (click)="append('2')" id="n2" class="btn">2</div>
+        <div (click)="append('3')" id="n3" class="btn">3</div>
+        <div (click)="plus()" id="plus" class="btn operator">+</div>
+        <div (click)="append('0')" id="n0" class="btn">0</div>
+        <div (click)="dot()" id="dot" class="btn">.</div>
+        <div (click)="equal()" id="equal" class="equal">=</div>
+      </div>
+    </div>
+  </div>
+
+  <ion-button (click)="confirmBill();">
+    Botón de prueba (Emitir) <!-- esto deberia ir en la calculadora despues -->
+  </ion-button>
+
+</ion-content>

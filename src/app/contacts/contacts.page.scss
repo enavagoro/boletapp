@@ -1,0 +1,73 @@
+/* Barra */
+
+ion-toolbar{
+    --background: #7898ff !important;
+    color: white;
+    text-align: center;
+}
+
+.list-title{
+    font-size: 18px;
+    padding-left: 20px;
+    width: 100%;
+    text-align: left;
+    font-weight: 500;
+}
+
+/* pagina */
+
+.contact-page-container{
+    width: 60%;
+    margin-left: 20%;
+}
+
+/* filter */
+
+.search-icon{
+    margin-top: 8px;
+    width: 25px;
+    height: 25px;
+}
+
+.item-filter{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    width: 90%;
+    margin-left: 5%;
+    border-radius: 10px;
+    --background: #eeeeee;
+}
+
+/* Lista de items */
+
+ion-avatar{
+    --border-radius: 0%;
+}
+  
+.list-item{
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+  
+.empty-contacts{
+    margin-left: 25px;
+}
+
+.grayscale { filter: grayscale(80%) !important; }
+
+/* fab button*/
+
+.fab-button{
+    --background: #7898ff;
+    --background-hover: #7898ff;
+    --background-focused: #7898ff;
+    --background-activated: #7898ff;
+}
+
+@media (max-width: 900px){
+    .contact-page-container{
+        width: 100%;
+        margin-left: 0%;
+    }
+}

@@ -1,0 +1,43 @@
+ion-toolbar{
+    --background: #7898ff !important;
+    color: white;
+    text-align: center;
+}
+
+.config-page-container{
+    width: 60%;
+    margin-left: 20%;
+}
+
+.list-title{
+    margin-top: 50px;
+    font-size: 18px;
+    padding-left: 20px;
+    width: 100%;
+    text-align: left;
+    font-weight: 500;
+}
+
+ion-item{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+
+ion-button{
+    width: 60%;
+    margin-left: 20%;
+    --background: #7898ff;;
+}
+
+.update-button{
+    margin-top: 10%;
+}
+
+@media (max-width: 900px){
+    .config-page-container{
+        width: 100%;
+        margin-left: 0%;
+    }
+}

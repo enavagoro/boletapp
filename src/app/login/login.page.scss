@@ -1,11 +1,11 @@
 ion-content{
-    --background: red;
+    --background: #7898ff;
   }
   
   .principal-container{
     height: 100vh;
     /*background-image: url('https://image.freepik.com/vector-gratis/diseno-fluido-fondo-abstracto_23-2148569527.jpg');*/
-    background: #474089;
+    background: #7898ff;
     background-position: 50% 50%;
     background-size: cover;
   }
@@ -14,26 +14,6 @@ ion-content{
   .bar-button-container{
     width: 20%;
     margin-left: 80%;
-  }
-
-  .bar-button{
-    font-family: "Roboto", sans-serif;
-    /* text-transform: uppercase; */
-    outline: 0;
-    background:white;
-    width: 60%;
-    margin-left: 20%;
-    border: 0;
-    padding-top: 3%;
-    padding-bottom: 3%;
-    margin-top: 10%;
-    color:#2e1274;
-    font-size: 17px;
-    font-weight: 700;
-    -webkit-transition: all 0.3 ease;
-    transition: all 0.3 ease;
-    cursor: pointer;
-    border-radius: 2px;
   }
 
   /* login */
@@ -98,13 +78,13 @@ ion-content{
     font-family: "Roboto", sans-serif;
     /* text-transform: uppercase; */
     outline: 0;
-    background: #2e1274;
+    background: white;
     width: 100%;
     margin-left: 0%;
     border: 0;
     padding-top: 5%;
     padding-bottom: 5%;
-    color: #FFFFFF;
+    color: #7898ff;;
     font-size: 17px;
     font-weight: 700;
     -webkit-transition: all 0.3 ease;

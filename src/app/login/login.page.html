@@ -1,0 +1,46 @@
+<div class="principal-container">
+<!--
+  <div class="bar">
+    <div class="bar-button-container escritorio">
+      <button class="bar-button" routerLink="/register" routerDirection="root">Regístrate</button>
+    </div>
+  </div>
+-->
+  <div class="login-form-container">
+    <div class="lune-logo-container">
+        <img class="logo" src="https://www.flaticon.com/svg/vstatic/svg/3753/3753033.svg?token=exp=1616360135~hmac=1c4bbb6287d4b809fdb2562465f6c8ee">
+    </div>
+    
+    <div class="inputs-container" *ngIf="formStatus==0">
+      <div class="input-container">
+        <input class="input-form" type="email" placeholder="Correo electrónico">
+      </div>
+
+      <div class="login-button-container">
+        <button class="login-button">Continuar</button>
+      </div>
+    </div>
+
+    <div class="" *ngIf="formStatus==1">
+      <div class="input-container">
+        <input class="input-form" type="email" placeholder="Correo electrónico">
+      </div>
+      <div class="input-container">
+        <input class="input-form" type="password" placeholder="Contraseña">
+      </div>
+      <div class="login-button-container">
+        <button class="login-button">Iniciar Sesión</button>
+      </div>
+    </div>
+  </div>
+
+<!--
+  <div class="link-registro-container celular">
+    <h1 class="link-registro celular" routerLink="/register" routerDirection="root">Regístrate Aquí</h1>
+  </div>
+-->
+</div>
+
+<div class="animation-layer">
+    
+</div>

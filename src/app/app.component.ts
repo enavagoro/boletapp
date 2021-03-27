@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
+  /*
   public appPages = [
     {
       title: 'Inicio',
@@ -16,13 +17,12 @@ export class AppComponent {
       url: '',
       icon: 'pricetags'
     }
-  ];
+  ];*/
   /*public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];*/
   constructor() {}
 
   ngAfterViewInit(){
     //Ocultar sidemenu
-    var menu = document.querySelector('ion-menu');
-    menu.hidden = true;
+
   }
 }

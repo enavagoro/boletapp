@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Contactos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content mode="md">
+  <div class="contact-page-container">
+  <ion-item class="item-filter">
+    <ion-avatar slot="start">
+      <img class="search-icon" src="./assets/icon/lupe-1.svg">
+    </ion-avatar>
+    <ion-input placeholder="Buscar Contactos" (keyup)="filter($event)" [(ngModel)]="searchQuery"></ion-input><!-- -->
+  </ion-item>
+
+  <ion-item mode="md">
+    <ion-label *ngIf="seeAll">Contactos Desactivados</ion-label>
+    <ion-label *ngIf="!seeAll">Contactos Activos</ion-label>
+    <label *ngIf="seeAll" slot="end"><ion-badge><!--{{filtrarDesactivados().length}}--></ion-badge></label>
+    <label *ngIf="!seeAll" slot="end"><ion-badge color="secondary"><!--{{clientes.length}}--></ion-badge></label>
+    <ion-toggle [(ngModel)]="seeAll"></ion-toggle>
+  </ion-item>
+
+  <p class="list-title">Lista de Contactos (Receptores)</p>
+
+  <ion-list *ngIf="!seeAll" mode="md">
+    <ion-item mode="md" class="list-item" *ngFor="let c of filterContacts()" (click)="options(c)">
+      <ion-avatar slot="start">
+        <img src="./assets/icon/contact.svg">
+      </ion-avatar>
+      <ion-label>{{c.name}}</ion-label>
+    </ion-item>
+    <p class="empty-contacts" *ngIf="contacts.length == 0">No hay contáctos aún...</p>
+  </ion-list>
+
+  <ion-list *ngIf="seeAll" mode="md">
+    <ion-item mode="md" class="list-item" *ngFor="let c of filterDesactivated()" (click)="options(c)">
+      <ion-avatar slot="start" *ngIf="c.status">
+        <img src="./assets/icon/contact.svg">
+      </ion-avatar>
+      <ion-avatar slot="start" *ngIf="!c.status">
+        <img class="grayscale" src="./assets/icon/contact.svg">
+      </ion-avatar>
+      <ion-label>{{c.name}}</ion-label>
+    </ion-item>
+    <p class="empty-contacts" *ngIf="contacts.length == 0">No hay contáctos aún...</p>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button class="fab-button" (click)="addContact(1)">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  </div>
+</ion-content>

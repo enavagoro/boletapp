@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { BillPageRoutingModule } from './bill-routing.module';
 
 import { BillPage } from './bill.page';
+import { NgxDocViewerModule } from 'ngx-doc-viewer';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    BillPageRoutingModule
+    BillPageRoutingModule,
+    NgxDocViewerModule
   ],
   declarations: [BillPage]
 })

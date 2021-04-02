@@ -1,9 +1,24 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>bill</ion-title>
+    <ion-title>Comprobante de Boleta</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ngx-doc-viewer [url]="doc" viewer="google" style="width:100%;height:100%;">
+  
+  </ngx-doc-viewer>
 
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button class="fab-button"><!--(click)="addContact(1)"-->
+      <ion-icon name="receipt"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <!--
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button class="fab-button">
+      <ion-icon name="receipt"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+-->
 </ion-content>

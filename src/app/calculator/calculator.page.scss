@@ -49,8 +49,8 @@ body {
 	display: grid;
     margin-top: 30px;
     margin-left: calc((100% - 300px)/2) !important;
-	grid-template-rows: repeat(5, minmax(60px, auto));
-	grid-template-columns: repeat(4, 60px);
+	grid-template-rows: repeat(6, minmax(60px, auto));
+	grid-template-columns: repeat(3, 60px);
 	grid-gap: 20px;
 	font-family: "Roboto" , sans-serif;
 	font-weight: 500;
@@ -65,6 +65,7 @@ body {
 .blue-background{
     background: #7898ff !important;
     color: white !important;
+    
 }
 
 
@@ -80,16 +81,31 @@ body {
     color: #333;
     background: #fafafa;
 }
-
+/*
 .equal {
-	grid-column: 3 / 5;
+    grid-column: 3 / 3;
     background: #7898ff;
-	color: white;
+    color: white;
     border-bottom-right-radius: 25px;
-}
+}*/
 
 .operator {
     background: #fafafa;
 	color: #7898ff;
     font-weight: 600;
+}
+
+
+#clear{
+    background: #7898ff !important;
+    color: white !important;
+
+}
+#trashbin{
+    background: #7898ff !important;
+    color: white !important;
+
+}
+#send{
+    grid-column:  2 / -1;
 }

@@ -16,9 +16,12 @@ export class ConfirmationPage implements OnInit {
       if(v){
         this.testValue = v;
       }
+
+      
   }
 
     ngOnInit() {
+      
   }
 
   closeModal(){

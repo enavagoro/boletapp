@@ -11,7 +11,87 @@
 
 <!-- aqui veo el valor, y agrego receptores de ser requerido luego mando a la sección del pdf -->
 <ion-content>
-{{testValue}}
+  <div class="principal-container">
 
-<ion-button>Confirmar Boleta</ion-button>
+    <ion-list>
+    <div class="default-item input-container">
+      <ion-input>
+        asdasd 
+      </ion-input>
+      <div class=input-text-container>
+
+      </div>
+    </div>
+
+    <div class="default-item select-container">
+      <div class="select">
+        <ion-item>
+          <ion-select placeholder= "Seleccione" interface="popover" class="select-options">
+            <ion-select-option value="brown">Brown</ion-select-option>
+            <ion-select-option value="blonde">Blonde</ion-select-option>
+            <ion-select-option value="black">Black</ion-select-option>
+            <ion-select-option value="red">Red</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+      <div class="select">
+        <ion-item>
+          <ion-select placeholder= "Seleccione" interface="popover" class="select-options">
+            <ion-select-option value="brown">Boleta exenta</ion-select-option>
+            <ion-select-option value="blonde">Boleta no exenta (?)</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+
+    </div>
+
+    
+    <div class="options-container">
+
+      <div class="toggle-container">
+        <div class="switch-container">
+          <ion-toggle ></ion-toggle>
+          </div>
+        <div class= "text-toggle-container">
+          <h1 class="text-toggle">Toggle</h1>
+        </div>
+        
+      </div>
+
+      <div class="toggle-container">
+        <div class="switch-container">
+          <ion-toggle ></ion-toggle>
+          </div>
+        <div class= "text-toggle-container">
+          <h1 class="text-toggle">Toggle</h1>
+        </div>
+        
+      </div>
+      
+      
+    
+    </div>
+
+    <div class="input-container">
+      <ion-item>
+        <!--<ion-avatar slot="start">
+            <img src="https://image.flaticon.com/icons/svg/1602/1602619.svg">
+        </ion-avatar>-->
+        <ion-label position="stacked">Vendedor<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required></ion-input>
+      </ion-item>  
+    </div>
+
+
+
+    <div class="button-container">
+      <ion-button>Confirmar Boleta</ion-button>
+    </div>
+
+  </ion-list>
+    
+
+
+ 
+</div>
 </ion-content>

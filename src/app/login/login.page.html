@@ -1,19 +1,28 @@
 <div class="principal-container">
-  <div class="login-form-container">
-    <div class="lune-logo-container">
-        <img class="logo" src="https://www.flaticon.com/svg/vstatic/svg/3753/3753033.svg?token=exp=1616360135~hmac=1c4bbb6287d4b809fdb2562465f6c8ee">
-    </div>
+  <form [formGroup]="loginForm">
+    <div class="login-form-container">
+      <div class="lune-logo-container">
+          <img class="logo" src="https://www.flaticon.com/svg/vstatic/svg/3753/3753033.svg?token=exp=1616360135~hmac=1c4bbb6287d4b809fdb2562465f6c8ee">
+      </div>
 
-    <div class="">
-      <div class="input-container">
-        <input class="input-form" type="email" placeholder="Correo electrónico">
-      </div>
-      <div class="input-container">
-        <input class="input-form" type="password" placeholder="Contraseña">
-      </div>
-      <div class="login-button-container">
-        <button class="login-button" (click)="login()">Iniciar Sesión</button>
+      <div class="">
+        <div class="input-container">
+          <ion-item>
+            <ion-input type="email" formControlName="email" placeholder="Correo"></ion-input>
+          </ion-item>
+        </div>
+        <div class="input-container">
+          <ion-item>
+            <ion-input type="password" formControlName="password" placeholder="Contraseña"></ion-input>
+          </ion-item>
+        </div>
+        <div class="login-button-container">
+          <button class="login-button" (click)="login()">Iniciar Sesión</button>
+        </div>
+        <div class="login-button-container">
+          <button class="login-button" (click)="test()">Iniciar Sesión</button>
+        </div>
       </div>
     </div>
-  </div>
+  </form>
 </div>

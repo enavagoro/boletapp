@@ -21,22 +21,22 @@
 
   <ion-tabs>
     <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="contacts" [routerLink]="['./contacts']" routerLinkActive="selected">
+      <ion-tab-button tab="contacts" (click)="navigateTo('/contacts')" routerLinkActive="selected"><!-- [routerLink]="['./contacts']" routerLinkActive="selected" -->
         <ion-icon name="person-circle"></ion-icon>
         <ion-label>Contactos</ion-label>
       </ion-tab-button>
   
-      <ion-tab-button tab="calculator" [routerLink]="['./calculator']" routerLinkActive="selected">
+      <ion-tab-button tab="calculator" (click)="navigateTo('/calculator')" routerLinkActive="selected">
         <ion-icon name="calculator"></ion-icon>
         <ion-label>Calculadora</ion-label>
       </ion-tab-button>
 
-      <ion-tab-button tab="stats" [routerLink]="['./stats']" routerLinkActive="selected">
+      <ion-tab-button tab="stats" (click)="navigateTo('/stats')" routerLinkActive="selected">
         <ion-icon name="stats-chart"></ion-icon>
         <ion-label>Estadísticas</ion-label>
       </ion-tab-button>
   
-      <ion-tab-button tab="config" [routerLink]="['./config']" routerLinkActive="selected">
+      <ion-tab-button tab="config" (click)="navigateTo('/config')" routerLinkActive="selected">
         <ion-icon name="settings-sharp"></ion-icon>
         <ion-label>Configuración</ion-label>
       </ion-tab-button>

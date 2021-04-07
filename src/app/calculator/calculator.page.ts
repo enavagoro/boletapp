@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController ,ToastController, AlertController,ActionSheetController} from '@ionic/angular';
 import { ConfirmationPage } from './confirmation/confirmation.page';
+import { DataStorageService } from '../_services/dataStorage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-calculator',
@@ -14,9 +16,16 @@ export class CalculatorPage implements OnInit {
   operatorClicked= true;
   serviceCalculator = true;
 
-  constructor( private modalCtrl : ModalController) { }
+  constructor(private modalCtrl : ModalController, private dataStorage: DataStorageService, private router:Router) { }
 
   ngOnInit() {
+    var val = this.dataStorage.get('user');
+    if(val){
+      console.log('este es el val',val);
+    }
+    else{
+      this.router.navigate(['/login'], {replaceUrl: true});
+    }
   }
 
   append(number) {

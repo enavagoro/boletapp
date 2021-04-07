@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController ,ToastController, AlertController,ActionSheetController} from '@ionic/angular';
 import { CrudContactsPage } from './crud-contacts/crud-contacts.page';
+import { DataStorageService } from '../_services/dataStorage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contacts',
@@ -15,16 +17,22 @@ export class ContactsPage implements OnInit {
   searchQuery = "";
   filteredContacts = [];
 
-  constructor(private modalCtrl : ModalController, private alertController : AlertController, private actionSheetController:ActionSheetController) { }
+  constructor(private router:Router, private dataStorage: DataStorageService, private modalCtrl : ModalController, private alertController : AlertController, private actionSheetController:ActionSheetController) { }
 
   ngOnInit() {
-    this.contacts = [
-                      {name:'hola',rut:'19390374-6',id:'1',status:true},
-                      {name:'mila',rut:'18940756-7',id:'2',status:true},
-                      {name:'cala',rut:'6202204-1',id:'3',status:false}
-                    ]
+    var val = this.dataStorage.get('user');
+    if(val){
+      this.contacts = [
+        {name:'hola',rut:'19390374-6',id:'1',status:true},
+        {name:'mila',rut:'18940756-7',id:'2',status:true},
+        {name:'cala',rut:'6202204-1',id:'3',status:false}
+      ]
 
-    this.filteredContacts = this.contacts;
+      this.filteredContacts = this.contacts;
+    }
+    else{
+      this.router.navigate(['/login'], {replaceUrl: true});
+    }
   }
 
   filterContacts(){

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -19,10 +22,20 @@ export class AppComponent {
     }
   ];*/
   /*public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];*/
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngAfterViewInit(){
     //Ocultar sidemenu
 
+  }
+
+  navigateToContacts(){
+    console.log('navegé a contactos')
+    this.router.navigate(['/contacts'], {replaceUrl: true});
+  }
+
+  navigateTo(value){
+    console.log('navegé a contactos')
+    this.router.navigate([value], {replaceUrl: true});
   }
 }

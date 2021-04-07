@@ -48,8 +48,8 @@ body {
     width: 100%;
 	display: grid;
     margin-top: 30px;
-    margin-left: calc((100% - 300px)/2) !important;
-	grid-template-rows: repeat(6, minmax(60px, auto));
+    margin-left: calc((100% - 200px)/2) !important;
+	grid-template-rows: repeat(5, minmax(60px, auto));
 	grid-template-columns: repeat(3, 60px);
 	grid-gap: 20px;
 	font-family: "Roboto" , sans-serif;
@@ -99,6 +99,7 @@ body {
 #clear{
     background: #7898ff !important;
     color: white !important;
+    grid-column:  1 / 3;
 
 }
 #trashbin{
@@ -107,5 +108,5 @@ body {
 
 }
 #send{
-    grid-column:  2 / -1;
+    grid-column:  2 / 4;
 }

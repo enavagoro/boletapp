@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { Injectable } from '@angular/core';
-//import { dataStorage } from '@ionic/storage';
+import { DataStorageService } from './dataStorage.service';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -12,15 +12,17 @@ export class LoginService {
   private token : string = "";
   private url: string = "http://localhost:8080";
   private empresa : string = "";
-  constructor(private router:Router,private storage : Storage,private http:HttpClient) {
-    this.storage.get('user').then((val) => {
-      if(val){
-        this.setEmpresa(val['empresa']);
-        this.setToken(val['token']);
-      }else{
-        this.router.navigate(['/login'], {replaceUrl: true});
-      }
-    })
+
+  constructor(private router:Router,private dataStorage : DataStorageService ,private http:HttpClient) {
+    var val = this.dataStorage.get('user');
+    
+    if(val){
+      this.setEmpresa(val['empresa']);
+      this.setToken(val['token']);
+    }
+    else{
+      this.router.navigate(['/login'], {replaceUrl: true});
+    }
   }
   
   public getUrl(){
@@ -42,14 +44,14 @@ export class LoginService {
     return "Bearer "+this.token;
   }
   public setUser(user){
-    this.storage.set('user', user);
+    this.dataStorage.set('user', user);
   }
   async getUser(form){
     this.url = <string>await this.getUrl();
     //this.url = "https://api.vase.cl";
     console.log('estoy dentro');
 
-    return this.http.post<any[]>(`${this.url}/user/login/`,form , {
+    return this.http.post<any[]>(`${this.url}/users/login/`,form , {
       headers: new HttpHeaders()
       .set('Authorization','Bearer '+this.token)
       .set('Content-Type', 'application/json')

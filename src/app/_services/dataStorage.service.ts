@@ -11,7 +11,6 @@ export class DataStorageService {
   get(dataName){
     console.log(this.data)
     return this.data[dataName];
-
   }
 
   set(dataName,dataValue){

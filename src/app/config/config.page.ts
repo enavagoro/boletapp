@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataStorageService } from '../_services/dataStorage.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,12 +14,20 @@ export class ConfigPage implements OnInit {
     folio: '123456',
   }
 
-  constructor(private router:Router) { }
+  constructor(private dataStorage: DataStorageService,private router:Router,) { }
 
   ngOnInit() {
+    var val = this.dataStorage.get('user');
+    if(val){
+      console.log('este es el val',val);
+    }
+    else{
+      this.router.navigate(['/login'], {replaceUrl: true});
+    }
   }
 
   logOut(){
+    this.dataStorage.clear();
     this.router.navigate(['/login'], {replaceUrl: true});
   }
 

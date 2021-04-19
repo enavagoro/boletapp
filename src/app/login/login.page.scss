@@ -3,11 +3,27 @@ ion-content{
   }
   
   .principal-container{
+    display: flex;
     height: 100vh;
     /*background-image: url('https://image.freepik.com/vector-gratis/diseno-fluido-fondo-abstracto_23-2148569527.jpg');*/
-    background: #7898ff;
+    //background: black;
     background-position: 50% 50%;
     background-size: cover;
+    
+  }
+  .left-container{
+    //    background: cadetblue;
+    width: 50%;
+  }
+  .right-container{
+    
+    border-left: 2px solid gray;
+    position: relative;
+  
+    height: 100%;
+    width: 50%;
+    //background-image:url( 'https://cdn.statically.io/img/lh4.googleusercontent.com/proxy/-_jkhfOQOVuhPzaIn4CoubndOuV3es80DYIgjPr3I8RLCsBTpOzrnOLrvi7hj2Y2JGz-H8jLmGkdocVrnKwgz8pP5_mEPN7KyXbJJh4uYV57ugQqbwBU90MmetaW8XT0KvvvbUQAIkJino8m388lj3YYG5Ci8df31IzQeE8y_Y5Lwg=s0-d');
+    //background: #4f72e7;
   }
   /* bar */
 
@@ -19,9 +35,10 @@ ion-content{
   /* login */
   
   .login-form-container{
-    width: 25%;
-    margin-top: 8%;
-    margin-left: calc(75%/2);
+  // background: black;
+    width: 50%;
+    margin-top: calc(50%/2);
+    margin-left: calc(50%/2);
     animation: left-in .5s ease-in;
   }
   
@@ -33,8 +50,8 @@ ion-content{
   /* Mail Input container */
   
   .input-container{
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 2%;
+    padding-bottom: 1%;
     margin-top: 3%;
     border-radius: 6px;
     background: white;
@@ -69,33 +86,88 @@ ion-content{
   }
   
   /* login */
-  
+
+  .login-options{
+    display: flex;
+    height: 50px;
+    margin-top: 2%;
+    
+    
+  } 
+
+  .remember-container{ 
+    display: flex;
+    width: 50%;
+    //background: orange;
+  }
+
+  .forgot-container{
+    //background: yellow;
+    width: 50%;
+  } 
+
+  .checkbox-container{
+    margin-top: 17px;
+    width: 20px;
+    //background: burlywood;
+  }
+  .text-container{
+    //background: rgba(150, 71, 71, 0.836);
+  }
+
+  .text-options{
+    font-size: 16px; 
+    text-align: center;
+  }
+
+  .text-options.forgot{
+    text-align: right;
+  }
+
+
   .login-button-container{
     margin-top: 10%;
+   
   }
   
   .login-button{
     font-family: "Roboto", sans-serif;
     /* text-transform: uppercase; */
     outline: 0;
-    background: white;
     width: 100%;
     margin-left: 0%;
     border: 0;
     padding-top: 5%;
     padding-bottom: 5%;
-    color: #7898ff;;
+    background-color: #4f72e7;
+    color: white;
     font-size: 17px;
     font-weight: 700;
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 3px;
   }
   
+
+  .logo-container{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+
+  .logo-background{
+    top: -50px;
+    filter: blur(3px);
+    position: absolute;
+  }
   .logo{
-      width: 100px;
-      margin-left: calc((100% - 100px)/2);
+    left: 200px;
+    top: -300px;
+    position: absolute;
+    width: 100%;
+    margin-top: calc((100% - 350px)/2);
+    margin-left: calc((100% - 800px)/2);
   }
   
   

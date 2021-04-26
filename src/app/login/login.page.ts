@@ -66,7 +66,7 @@ export class LoginPage implements OnInit {
             for(var user of r){
               user.token = d['accessToken'];
               this.loginService.setUser(user);
-              this.loginService.setEmpresa(user.enterpriseId);
+              this.loginService.setEnterprise(user.enterpriseId);
               this.router.navigate(['calculator'], {replaceUrl: true});
               var tabs = document.querySelector('ion-tab-bar');
               tabs.hidden = false;

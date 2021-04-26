@@ -11,13 +11,14 @@ import { Router } from '@angular/router';
 export class LoginService {
   private token : string = "";
   private url: string = "http://localhost:8080";
-  private empresa : string = "";
+  private enterprise : string = "";
+  private user : string = "";
 
   constructor(private router:Router,private dataStorage : DataStorageService ,private http:HttpClient) {
     var val = this.dataStorage.get('user');
     
     if(val){
-      this.setEmpresa(val['empresa']);
+      this.setEnterprise(val['enterprise']);
       this.setToken(val['token']);
     }
     else{
@@ -31,11 +32,11 @@ export class LoginService {
     });
   }
   
-  public getEmpresa(){
-    return this.empresa;
+  public getEnterprise(){
+    return this.enterprise;
   }  
-  public setEmpresa(em){
-    this.empresa = em;
+  public setEnterprise(em){
+    this.enterprise = em;
   }
   public setToken(t){
     this.token = t;
@@ -45,7 +46,12 @@ export class LoginService {
   }
   public setUser(user){
     this.dataStorage.set('user', user);
+    this.user = user;
   }
+  public getUserId(){
+   return this.user['_id'];
+  }
+
   async getUser(form){
     this.url = <string>await this.getUrl();
     //this.url = "https://api.vase.cl";

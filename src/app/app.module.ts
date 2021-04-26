@@ -17,6 +17,7 @@ import { AuthService } from './_services/auth.service';
 import { LoginService } from './_services/login.service';
 import { ValidationService } from './_services/validation.service';
 import { DataStorageService } from './_services/dataStorage.service';
+import { ContactService } from './_services/contact.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,6 +30,7 @@ import { DataStorageService } from './_services/dataStorage.service';
     LoginService,
     DataStorageService,
     ValidationService,
+    ContactService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
   schemas :[CUSTOM_ELEMENTS_SCHEMA],

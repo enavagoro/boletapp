@@ -26,6 +26,13 @@
   <p class="list-title">Lista de Contactos (Receptores)</p>
 
   <ion-list *ngIf="!seeAll" mode="md">
+    <ion-item mode="md" class="list-item" (click)="addContact(1)">
+      <ion-avatar slot="start">
+        <img src="./assets/icon/add.svg">
+      </ion-avatar>
+      <ion-label>Agregar un nuevo contacto</ion-label>
+    </ion-item>
+
     <ion-item mode="md" class="list-item" *ngFor="let c of filterContacts()" (click)="options(c)">
       <ion-avatar slot="start">
         <img src="./assets/icon/contact.svg">

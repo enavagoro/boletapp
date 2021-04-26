@@ -3,6 +3,7 @@ import { ModalController ,ToastController, AlertController,ActionSheetController
 import { CrudContactsPage } from './crud-contacts/crud-contacts.page';
 import { DataStorageService } from '../_services/dataStorage.service';
 import { Router } from '@angular/router';
+import { ContactService } from '../_services/contact.service';
 
 @Component({
   selector: 'app-contacts',
@@ -17,18 +18,18 @@ export class ContactsPage implements OnInit {
   searchQuery = "";
   filteredContacts = [];
 
-  constructor(private router:Router, private dataStorage: DataStorageService, private modalCtrl : ModalController, private alertController : AlertController, private actionSheetController:ActionSheetController) { }
+  constructor(private router:Router, private dataStorage: DataStorageService, private modalCtrl : ModalController, private alertController : AlertController, private actionSheetController:ActionSheetController, private contactService:ContactService) { }
 
   ngOnInit() {
     var val = this.dataStorage.get('user');
     if(val){
-      this.contacts = [
-        {name:'hola',rut:'19390374-6',id:'1',status:true},
-        {name:'mila',rut:'18940756-7',id:'2',status:true},
-        {name:'cala',rut:'6202204-1',id:'3',status:false}
-      ]
-
-      this.filteredContacts = this.contacts;
+      this.contactService.list().then(servicio=>{
+        servicio.subscribe(datos=>{
+          console.log('estos son los datos que llegan',datos);
+          this.contacts =  datos;
+          this.filteredContacts = datos;
+        })
+      })
     }
     else{
       this.router.navigate(['/login'], {replaceUrl: true});
@@ -56,7 +57,7 @@ export class ContactsPage implements OnInit {
   }
 
   filter(ev){
-    console.log(this.searchQuery);
+    /*console.log(this.searchQuery);*/
     if(this.searchQuery){          
       var filteredValues = [];
       for(var contact of this.contacts){
@@ -84,13 +85,7 @@ export class ContactsPage implements OnInit {
     const actionSheet = await this.actionSheetController.create({
       header: 'Opciones',
       buttons: [{
-        text: 'Ver',
-        icon: 'eye',
-        handler: () => {
-          this.addContact(1);
-        }
-      },{
-        text: 'Actualizar',
+        text: 'Editar Contacto',
         icon: 'sync',
         handler: () => {
           this.editContact(contact,2);
@@ -132,7 +127,7 @@ export class ContactsPage implements OnInit {
     });
 
     modal.onDidDismiss().then(modal=>{
-      console.log("haciendo pruebas");
+      
       this.ngOnInit();
     });
 
@@ -149,7 +144,7 @@ export class ContactsPage implements OnInit {
     });
 
     modal.onDidDismiss().then(modal=>{
-      console.log("haciendo pruebas");
+      
       this.ngOnInit();
     });
 
@@ -174,12 +169,20 @@ export class ContactsPage implements OnInit {
         }, {
           text: 'Okay',
           handler: () => {
-            7//this.deleteAndRecovery(option,contact);
+            this.deleteAndRecovery(option,contact);
           }
         }
       ]
     });
 
     await alert.present();
+  }
+
+  deleteAndRecovery(option,contact){
+    contact['status'] = !contact['status'] ;
+    this.contactService.update(contact['_id'],contact).subscribe(contact=>{
+      //console.log(contact);
+      //this.ngOnInit();
+    })
   }
 }

@@ -11,14 +11,12 @@
     <div class="rigth-side">
       <!-- calculadora -->
       <div class="result">
-        <div class="display"><p>{{ logList + current}}</p></div>
-        <div class="answer" *ngIf="!Error">{{ answer | number}}</div>
-        <div class="answer" *ngIf="Error">{{ answer}}</div>
+        <div class="answer">{{current}}</div>
       </div>
       <div class="calculator">
         
-        <div (click)="clear()" id="clear" class="btn operator">C</div>
-        <div (click)="sign()" id="trashbin" class="btn operator" > <ion-icon slot="icon-only" name="trash-bin" ></ion-icon>
+        <div (click)="deleteLast()" id="clear" class="btn operator">C</div>
+        <div (click)="clear()" id="trashbin" class="btn operator" > <ion-icon slot="icon-only" name="trash-bin" ></ion-icon>
         </div>
         
          <!--<div (click)="divide()" id="divide" class="btn operator">
@@ -41,12 +39,12 @@
        <!-- <div (click)="plus()" id="plus" class="btn operator">+</div>-->
         <div (click)="append('0')" id="n0" class="btn">0</div>
         <!--<div (click)="dot()" id="dot" class="btn">.</div>-->
-        <div (click)="equal()" id="send" class="btn operator blue-background">Emitir</div>
+        <div (click)="confirmBill();" id="send" class="btn operator blue-background">Emitir</div>
       </div>
     </div>
   </div>
 
-  <ion-button (click)="confirmBill();">
+  <ion-button>
     Botón de prueba (Emitir) <!-- esto deberia ir en la calculadora despues -->
   </ion-button>
 

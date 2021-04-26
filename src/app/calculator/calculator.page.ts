@@ -44,27 +44,6 @@ export class CalculatorPage implements OnInit {
       this.operatorClicked = true;
     }
   };
-/*
-  animateNumber(number) {
-    let tl = anime.timeline({
-      targets: `#${number}`,
-      duration: 250,
-      easing: "easeInOutCubic"
-    });
-    tl.add({ backgroundColor: "#c1e3ff" });
-    tl.add({ backgroundColor: "#f4faff" });
-  };
-
-  
-  animateOperator(operator) {
-    let tl = anime.timeline({
-      targets: `#${operator}`,
-      duration: 250,
-      easing: "easeInOutCubic"
-    });
-    tl.add({ backgroundColor: "#a6daff" });
-    tl.add({ backgroundColor: "#d9efff" });
-  };*/
 
   clear() {
    // this.animateOperator("clear");
@@ -73,6 +52,12 @@ export class CalculatorPage implements OnInit {
     this.logList = "";
     this.operatorClicked = false;
   };
+
+  deleteLast(){
+    
+    this.current = this.current.slice(0, -1);
+    console.log('current',this.current);
+  }
 
   sign() {
   //  this.animateOperator("sign");
